@@ -2,6 +2,7 @@
 <p>Chrome extension displaying personalized sports stats. </p>
 
 ![](https://img.shields.io/badge/license-Apache--2.0-brightgreen)
+![](https://img.shields.io/github/issues/dhu16/sportsbox)
 
 <h2> Overview </h2>
 
