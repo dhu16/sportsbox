@@ -17,7 +17,7 @@ class Team:
 
     # Getters
     def getTeamName(self):
-        return self.name
+        return str(self.name)
 
     def getColor1(self):
         return self.color1

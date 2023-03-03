@@ -58,3 +58,8 @@ def test_team1():
     t = getTName(0)
 
     assert t == "atl"
+
+def test_atlcolor1():
+    t = getTName(1)
+
+    assert t == "bos"
