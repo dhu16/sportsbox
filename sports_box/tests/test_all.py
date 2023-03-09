@@ -59,6 +59,7 @@ def test_team1():
 
     assert t == "atl"
 
+
 def test_atlcolor1():
     t = getTName(1)
 
