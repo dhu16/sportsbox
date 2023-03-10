@@ -1,10 +1,7 @@
 # favorite player data
-import pandas
 import matplotlib.pyplot as plt
-import numpy as np
 
 # import userprofile
-from IPython.display import display
 from nba_api.stats.static import players
 from nba_api.stats.endpoints import playercareerstats
 from nba_api.stats.endpoints import commonplayerinfo
