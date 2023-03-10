@@ -1,9 +1,6 @@
 # team stuff
-import pandas
-import numpy as np
 
 # import userprofile
-from IPython.display import display
 from nba_api.stats.static import teams
 from nba_api.stats.endpoints import teaminfocommon
 
