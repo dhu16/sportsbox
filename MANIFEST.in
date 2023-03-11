@@ -2,6 +2,8 @@ graft sports_box
 
 include LICENSE
 include README.md
+include *.json
+include .md
 
 include .bumpversion.cfg
 include pyproject.toml
