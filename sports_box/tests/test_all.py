@@ -1,9 +1,9 @@
 # tests
 from sports_box import getMyTeam, getPID, myRoster, getPlayer, playerStats, playerNextNGames, getTeam, getTName
-from unittest.mock import patch
-from typing import List
-import pytest
-import pandas as pd
+
+# from typing import List
+# import pytest
+# import pandas as pd
 
 
 def test_first():
