@@ -43,9 +43,9 @@ def test_teamInfo():
 
 
 def test_myroster():
-    l = myRoster("Handoff Hu")
+    length = myRoster("Handoff Hu")
 
-    assert len(l) == 16
+    assert len(length) == 16
 
 
 def test_teamstanding():
