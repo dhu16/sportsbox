@@ -1,7 +1,5 @@
 # fantasy data
-
 """
-import espn_api
 from espn_api.football import League
 
 # extra parameters to access my private fantasy football league
