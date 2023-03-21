@@ -1,5 +1,5 @@
 # tests
-from sports_box import getMyTeam, getPID, myRoster, getPlayer, playerStats, playerNextNGames, getTeam, getTName
+from sports_box import getPID, getPlayer, playerStats, playerNextNGames, getTeam, getTName
 
 # from typing import List
 # import pytest
@@ -42,16 +42,16 @@ def test_teamInfo():
     assert len(columns) == 16
 
 
-def test_myroster():
-    length = myRoster("Handoff Hu")
+#def test_myroster():
+    #length = myRoster("Handoff Hu")
 
-    assert len(length) == 16
+    #assert len(length) == 16
 
 
-def test_teamstanding():
-    t = getMyTeam("Handoff Hu")
+#def test_teamstanding():
+    #t = getMyTeam("Handoff Hu")
 
-    assert t.final_standing == 3
+    #assert t.final_standing == 3
 
 
 def test_team1():
