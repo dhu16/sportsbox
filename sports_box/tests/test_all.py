@@ -4,10 +4,8 @@ from sports_box import (
     PlayerInfo,
     PlayerStats,
     PlayerGames,
-    getPlayer,
-    playerStats,
-    playerNextNGames,
-    getTeam,
+    PlayerId,
+    TeamId,
     getTName,
 )
 from unittest.mock import patch
@@ -18,9 +16,14 @@ from unittest import TestCase
 # import pandas as pd
 
 
-sample_id_data = [
-    {'id': 2544, 'full_name': 'LeBron James', 'first_name': 'LeBron', 'last_name': 'James', 'is_active': True}
-]
+sample_id_data = {
+    'id': 2544,
+    'full_name': 'LeBron James',
+    'first_name': 'LeBron',
+    'last_name': 'James',
+    'is_active': True,
+}
+
 sample_player_data = {
     'headers': [
         'PERSON_ID',
@@ -170,13 +173,30 @@ sample_player_games = {
     'data': [],
 }
 
+sample_team_id = {
+    'id': 1610612749,
+    'full_name': 'Milwaukee Bucks',
+    'abbreviation': 'MIL',
+    'nickname': 'Bucks',
+    'city': 'Milwaukee',
+    'state': 'Wisconsin',
+    'year_founded': 1968,
+}
+
 
 # PLAYER ID TEST
-def test_first():
-    with patch("nba_api.stats.static.players.find_players_by_full_name") as mock:
-        mock.return_value = sample_id_data
-        assert getPID("Lebron James") == 2544
-        assert mock.call_args[0] == ("Lebron James",)
+def mock_get_playerid(player_id):
+    return 2544
+
+
+class PlayerIdTest(TestCase):
+    def setUp(self):
+        self.playerid = PlayerId("Lebron James")
+
+    @patch('nba_api.stats.static.players.find_players_by_full_name', mock_get_playerid)
+    def test_first(self):
+        mock_id = self.playerid.get_data()
+        assert mock_id == sample_id_data['id']
 
 
 # PLAYER INFO TEST
@@ -229,30 +249,19 @@ class PlayerGamesTest(TestCase):
         assert mock_data == sample_player_games
 
 
-def test_teamInfo():
-    dfcolumns = [
-        'TEAM_ID',
-        'SEASON_YEAR',
-        'TEAM_CITY',
-        'TEAM_NAME',
-        'TEAM_ABBREVIATION',
-        'TEAM_CONFERENCE',
-        'TEAM_DIVISION',
-        'TEAM_CODE',
-        'TEAM_SLUG',
-        'W',
-        'L',
-        'PCT',
-        'CONF_RANK',
-        'DIV_RANK',
-        'MIN_YEAR',
-        'MAX_YEAR',
-    ]
-    # teamdf = getTeam("mil")
-    # columns = teamdf.columns.tolist()
-    columns = dfcolumns
+# TEAM ID TEST
+def mock_get_teamid(team_id):
+    return 1610612749
 
-    assert len(columns) == 16
+
+class TeamIdTest(TestCase):
+    def setUp(self):
+        self.teamid = TeamId("mil")
+
+    @patch('nba_api.stats.static.teams.find_team_by_abbreviation', mock_get_teamid)
+    def test_teamInfo(self):
+        mock_id = self.teamid.get_data()
+        assert mock_id == sample_team_id['id']
 
 
 # def test_myroster():
