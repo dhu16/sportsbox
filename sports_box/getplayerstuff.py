@@ -9,6 +9,37 @@ from nba_api.stats.endpoints import PlayerNextNGames
 
 # from nbaHeadshots import getHeadshotById, getAllHeadshots
 
+########################    MOCK CLASSES    ################################
+class PlayerInfo(object):
+    def __init__(self, player_id):
+        self.player_id = player_id
+    
+    def get_data(self):
+        data = commonplayerinfo.CommonPlayerInfo(2544).common_player_info.get_dict()
+        return data
+    
+class PlayerStats(object):
+    def __init__(self, player_id):
+        self.player_id = player_id
+    
+    def get_data(self):
+        data = playercareerstats.PlayerCareerStats(2544).career_totals_regular_season.get_dict()
+        return data
+    
+class PlayerGames(object):
+    def __init__(self, number_of_games, player_id, season_all, season_type_all_star):
+        self.number_of_games = number_of_games
+        self.player_id = player_id
+        self.season_all = season_all
+        self.season_type_all_star = season_type_all_star
+    
+    def get_data(self):
+        data = PlayerNextNGames(
+        number_of_games="3", player_id=2544, season_all="2021-22", season_type_all_star="Regular Season"
+    ).next_n_games.get_dict()
+        return data
+
+#############################################################################
 
 def getPID(player):  # helper function to get player ID
     p = players.find_players_by_full_name(player)
@@ -18,23 +49,26 @@ def getPID(player):  # helper function to get player ID
     return id
 
 
-def getPlayer(player):  # use this basic info to build player profile page
+def getPlayer(player): 
     # getHeadshotById(id)
     id = getPID(player)
-    load = commonplayerinfo.CommonPlayerInfo(player_id=id)
-    playerinfo = load.common_player_info.get_data_frame()
-    # playerinfo = load.common_player_info.get_dict()
+    load = commonplayerinfo.CommonPlayerInfo(id).common_player_info
+    #load = commonplayerinfo.CommonPlayerInfo(id)
+    #playerinfo = load.common_player_info.get_data_frame()
+    playerinfo = load.get_dict()
+    #playerinfo = load
 
     # display(playerinfo.loc[0])
     return playerinfo
+    #print(playerinfo)
 
 
 def playerStats(player):  # show career stats of player
     id = getPID(player)
-    load = playercareerstats.PlayerCareerStats(player_id=id)
-    stats = load.career_totals_regular_season.get_data_frame()
-    # stats = load.career_totals_regular_season.get_dict()
-    stats.style.set_caption(player + "'s Stats")
+    load = playercareerstats.PlayerCareerStats(id).career_totals_regular_season
+    #stats = load.career_totals_regular_season.get_data_frame()
+    stats = load.get_dict()
+    #stats.style.set_caption(player + "'s Stats")
 
     return stats  # horizontal stats
 
@@ -45,12 +79,12 @@ def playerNextNGames(player, n):  # show next n games for player
     load = PlayerNextNGames(
         number_of_games=s, player_id=id, season_all="2022-23", season_type_all_star="Regular Season"
     )
-    upcoming = load.next_n_games.get_data_frame()
-    # upcoming = load.next_n_games.get_dict()
+    #upcoming = load.next_n_games.get_data_frame()
+    upcoming = load.next_n_games.get_dict()
     # upcoming.style.set_caption(player + "'s Upcoming " + s + " Games")
 
     return upcoming
-    # print(upcoming)
+    #print(upcoming)
 
 
 def buildPlayerSchedule(player):
@@ -68,7 +102,7 @@ def buildPlayerSchedule(player):
     plt.show()
 
 
-# getPlayer("Lebron James")
-# playerStats("Lebron James")
-# playerNextNGames("Lebron James", 3)
+getPlayer("Lebron James")
+#playerStats("Lebron James")
+#playerNextNGames("Lebron James", 3)
 # buildPlayerSchedule("Lebron James")
