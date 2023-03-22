@@ -9,8 +9,18 @@ from nba_api.stats.endpoints import PlayerNextNGames
 
 # from nbaHeadshots import getHeadshotById, getAllHeadshots
 
-#MOCK CLASSES
+
+# MOCK CLASSES
 ########################################################
+class PlayerId(object):
+    def __init__(self, player_id):
+        self.player_id = player_id
+
+    def get_data(self):
+        data = players.find_players_by_full_name("Lebron James")
+        return data
+
+
 class PlayerInfo(object):
     def __init__(self, player_id):
         self.player_id = player_id
@@ -25,7 +35,8 @@ class PlayerStats(object):
         self.player_id = player_id
 
     def get_data(self):
-        data = playercareerstats.PlayerCareerStats(2544).career_totals_regular_season.get_dict()
+        # data = playercareerstats.PlayerCareerStats(2544).career_totals_regular_season.get_dict()
+        data = playerStats("Lebron James")
         return data
 
 
@@ -40,6 +51,7 @@ class PlayerGames(object):
         data = PlayerNextNGames(
             number_of_games="3", player_id=2544, season_all="2021-22", season_type_all_star="Regular Season"
         ).next_n_games.get_dict()
+        # data = playerNextNGames("Lebron James", 3)
         return data
 
 
