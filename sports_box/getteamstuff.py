@@ -11,11 +11,11 @@ def getTeam(team):
     id = list(t.items())[0][1]
     load = teaminfocommon.TeamInfoCommon(team_id=id, season_nullable="2022-23")
     teaminfo = load.team_info_common.get_data_frame()
-    #teaminfo = load.team_info_common.get_dict()
+    # teaminfo = load.team_info_common.get_dict()
 
-    #return teaminfo.loc[0]
+    # return teaminfo.loc[0]
     return teaminfo
-    #print(teaminfo)
+    # print(teaminfo)
 
 
 getTeam("mil")
