@@ -9,7 +9,8 @@ from nba_api.stats.endpoints import PlayerNextNGames
 
 # from nbaHeadshots import getHeadshotById, getAllHeadshots
 
-#MOCK CLASSES
+
+# MOCK CLASSES
 ########################################################
 class PlayerInfo(object):
     def __init__(self, player_id):
