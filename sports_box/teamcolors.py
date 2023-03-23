@@ -46,7 +46,7 @@ class Team:
 
 
 def getTName(index):
-    t = Team(nba[index])
+    t = nba[index]
 
     return t.getTeamName()
 
@@ -229,6 +229,6 @@ was.setColor3(196, 206, 212)
 nba.append(was)
 
 
-print(atl.color1)
-print(atl.color2)
-print(atl.color3)
+# print(atl.color1)
+# print(atl.color2)
+# print(atl.color3)

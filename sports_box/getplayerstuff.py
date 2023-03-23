@@ -1,5 +1,6 @@
 # favorite player data
 import matplotlib.pyplot as plt
+import time
 
 # import userprofile
 from nba_api.stats.static import players
@@ -69,6 +70,7 @@ def getPID(player):  # helper function to get player ID
 def getPlayer(player):
     # getHeadshotById(id)
     id = getPID(player)
+    time.sleep(1)
     load = commonplayerinfo.CommonPlayerInfo(id).common_player_info
     # load = commonplayerinfo.CommonPlayerInfo(id)
     # playerinfo = load.common_player_info.get_data_frame()
@@ -82,6 +84,7 @@ def getPlayer(player):
 
 def playerStats(player):  # show career stats of player
     id = getPID(player)
+    time.sleep(1)
     load = playercareerstats.PlayerCareerStats(id).career_totals_regular_season
     # stats = load.career_totals_regular_season.get_data_frame()
     stats = load.get_dict()
@@ -93,6 +96,7 @@ def playerStats(player):  # show career stats of player
 def playerNextNGames(player, n):  # show next n games for player
     s = str(n)
     id = getPID(player)
+    time.sleep(1)
     load = PlayerNextNGames(
         number_of_games=s, player_id=id, season_all="2022-23", season_type_all_star="Regular Season"
     )

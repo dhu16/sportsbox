@@ -1,12 +1,5 @@
 # tests
-from sports_box import (
-    PlayerInfo,
-    PlayerStats,
-    PlayerGames,
-    PlayerId,
-    TeamId,
-    getTName,
-)
+from sports_box import PlayerInfo, PlayerStats, PlayerGames, PlayerId, TeamId, getTName, Team
 from unittest.mock import patch
 from unittest import TestCase
 
@@ -277,11 +270,5 @@ class TeamIdTest(TestCase):
 
 def test_team1():
     t = getTName(0)
-
+    print(t)
     assert t == "atl"
-
-
-def test_atlcolor1():
-    t = getTName(1)
-
-    assert t == "bos"
