@@ -1,6 +1,5 @@
 # tests
 from sports_box import (
-    getPID,
     PlayerInfo,
     PlayerStats,
     PlayerGames,

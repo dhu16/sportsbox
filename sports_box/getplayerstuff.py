@@ -119,7 +119,7 @@ def buildPlayerSchedule(player):
     plt.show()
 
 
-getPlayer("Lebron James")
+# getPlayer("Lebron James")
 # playerStats("Lebron James")
 # playerNextNGames("Lebron James", 3)
 # buildPlayerSchedule("Lebron James")
