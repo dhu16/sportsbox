@@ -3,7 +3,7 @@
 
 ![](https://img.shields.io/badge/license-Apache--2.0-brightgreen)
 ![](https://img.shields.io/github/issues/dhu16/sportsbox)
-![](https://img.shields.io/codecov/c/github/dhu16/sportsbox)
+[![codecov](https://codecov.io/gh/dhu16/sportsbox/branch/main/graph/badge.svg?token=UHT46NYQGX)](https://codecov.io/gh/dhu16/sportsbox)
 
 <h2> Overview </h2>
 
