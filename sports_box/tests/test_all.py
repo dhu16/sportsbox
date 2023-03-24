@@ -311,7 +311,7 @@ def test_team1():
     assert t == "atl"
 
 
-def test_team1color():
+def test_teamcolor1():
     t = getTColor1(0)
 
     assert t == [225, 68, 52, 0]
