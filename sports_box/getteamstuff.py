@@ -35,4 +35,4 @@ def getTeam(team):
     # print(t)
 
 
-getTeam("mil")
+# getTeam("mil")

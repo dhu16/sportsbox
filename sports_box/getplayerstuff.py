@@ -26,7 +26,7 @@ class PlayerInfo(object):
         self.player_id = player_id
 
     def get_data(self):
-        data = commonplayerinfo.CommonPlayerInfo(2544).common_player_info.get_dict()
+        data = commonplayerinfo.CommonPlayerInfo(2544).common_player_info
         return data
 
 
@@ -35,8 +35,8 @@ class PlayerStats(object):
         self.player_id = player_id
 
     def get_data(self):
-        # data = playercareerstats.PlayerCareerStats(2544).career_totals_regular_season.get_dict()
-        data = playerStats("Lebron James")
+        data = playercareerstats.PlayerCareerStats(2544).career_totals_regular_season.get_dict()
+        # data = playerStats("Lebron James")
         return data
 
 
@@ -119,7 +119,7 @@ def buildPlayerSchedule(player):
     plt.show()
 
 
-getPlayer("Lebron James")
+# getPlayer("Lebron James")
 # playerStats("Lebron James")
 # playerNextNGames("Lebron James", 3)
 # buildPlayerSchedule("Lebron James")
