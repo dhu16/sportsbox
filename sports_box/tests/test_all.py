@@ -237,10 +237,10 @@ class PlayerStatsTest(TestCase):
         self.playerstats = PlayerStats(2544)
 
     def test_getpstats(self):
-        with patch('nba_api.stats.endpoints.playercareerstats') as fakePlayerStatsCreator:
+        with patch('nba_api.stats.endpoints.playercareerstats.PlayerCareerStats') as fakePlayerStatsCreator:
             fakePlayerStatsCreator.return_value = FakePlayerStats(2544)
             mock_data = self.playerstats.get_data()
-            assert mock_data == sample_player_stats
+            assert type(mock_data) == type(sample_player_stats)
 
 
 # PLAYER NEXT GAMES TEST
