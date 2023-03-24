@@ -254,7 +254,7 @@ class FakeNextGamesData:
 
 class FakeNextGames:
     def __init__(self, player_id):
-        self.career_totals_regular_season = FakeNextGamesData(player_id)
+        self.next_n_games = FakeNextGamesData(player_id)
 
 
 class PlayerGamesTest(TestCase):
