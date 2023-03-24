@@ -1,6 +1,5 @@
 # favorite player data
 import matplotlib.pyplot as plt
-import time
 
 # import userprofile
 from nba_api.stats.static import players
