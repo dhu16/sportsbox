@@ -245,16 +245,19 @@ class PlayerStatsTest(TestCase):
 
 # PLAYER NEXT GAMES TEST
 class FakeNextGamesData:
-    def __init__(self, player_id):
+    def __init__(self, number_of_games, player_id, season_all, season_type_all_star):
+        self.number_of_games = number_of_games
         self.player_id = player_id
+        self.season_all = season_all
+        self.season_type_all_star = season_type_all_star
 
     def get_dict(self):
         return sample_player_games
 
 
 class FakeNextGames:
-    def __init__(self, player_id):
-        self.next_n_games = FakeNextGamesData(player_id)
+    def __init__(self, number_of_games, player_id, season_all, season_type_all_star):
+        self.next_n_games = FakeNextGamesData(number_of_games, player_id, season_all, season_type_all_star)
 
 
 class PlayerGamesTest(TestCase):
@@ -265,7 +268,7 @@ class PlayerGamesTest(TestCase):
 
     def test_nextgames(self):
         with patch('nba_api.stats.endpoints.PlayerNextNGames') as fakeGames:
-            fakeGames.return_value = FakeNextGames(2544)
+            fakeGames.return_value = FakeNextGames("3", 2544, "2021-22", "Regular Season")
             mock_data = self.playergames.get_data()
 
             assert mock_data == sample_player_games
