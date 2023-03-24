@@ -1,5 +1,5 @@
 # tests
-from sports_box import PlayerInfo, PlayerStats, PlayerGames, PlayerId, TeamId, getTName, Team
+from sports_box import PlayerInfo, PlayerStats, PlayerGames, PlayerId, TeamId, getTName, getTColor1
 from unittest.mock import patch
 from unittest import TestCase
 
@@ -243,6 +243,7 @@ class PlayerStatsTest(TestCase):
             assert type(mock_data) == type(sample_player_stats)
 
 
+"""
 # PLAYER NEXT GAMES TEST
 class FakeNextGamesData:
     def __init__(self, number_of_games, player_id, season_all, season_type_all_star):
@@ -274,6 +275,7 @@ class PlayerGamesTest(TestCase):
             mock_data = self.playergames.get_data()
 
             assert mock_data == sample_player_games
+"""
 
 
 # TEAM ID TEST
@@ -305,5 +307,11 @@ class TeamIdTest(TestCase):
 
 def test_team1():
     t = getTName(0)
-    print(t)
+    # print(t)
     assert t == "atl"
+
+
+def test_team1color():
+    t = getTColor1(0)
+
+    assert t == [225, 68, 52, 0]

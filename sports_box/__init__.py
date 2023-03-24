@@ -12,4 +12,4 @@ from .getplayerstuff import (
     PlayerId,
 )
 from .getteamstuff import getTeam, TeamId
-from .teamcolors import getTName, Team
+from .teamcolors import getTName, getTColor1

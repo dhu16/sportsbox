@@ -51,6 +51,12 @@ def getTName(index):
     return t.getTeamName()
 
 
+def getTColor1(index):
+    t = nba[index]
+
+    return t.getColor1()
+
+
 atl = Team("atl")
 atl.setColor1(225, 68, 52)
 atl.setColor2(196, 214, 0)
