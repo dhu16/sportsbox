@@ -192,40 +192,69 @@ class PlayerIdTest(TestCase):
 
 
 # PLAYER INFO TEST
-def mock_get_playerinfo(player_id):
-    return sample_player_data
+class FakeCommonPlayerInfoData:
+    def __init__(self, player_id):
+        self.player_id = player_id
+
+    def get_dict(self):
+        return sample_player_data
+
+
+class FakeCommonPlayerInfo:
+    def __init__(self, player_id):
+        self.common_player_info = FakeCommonPlayerInfoData(player_id).get_dict()
 
 
 class PlayerInfoTest(TestCase):
     def setUp(self):
         self.playerinfo = PlayerInfo(2544)
 
-    @patch('nba_api.stats.endpoints.commonplayerinfo', mock_get_playerinfo)
     def test_getplayer(self):
-        mock_data = self.playerinfo.get_data()
+        with patch('nba_api.stats.endpoints.commonplayerinfo.CommonPlayerInfo') as commonPlayerInfoCreator:
+            commonPlayerInfoCreator.return_value = FakeCommonPlayerInfo(2544)
+            mock_data = self.playerinfo.get_data()
+            assert mock_data == sample_player_data
 
-        assert mock_data == sample_player_data
+            # assert mock_data == sample_player_data
 
 
 # PLAYER STATS TEST
-def mock_get_playerstats(player_id):
-    return sample_player_stats
+class FakePlayerStatsData:
+    def __init__(self, player_id):
+        self.player_id = player_id
+
+    def get_dict(self):
+        return sample_player_stats
+
+
+class FakePlayerStats:
+    def __init__(self, player_id):
+        self.career_totals_regular_season = FakeCommonPlayerInfoData(player_id)
 
 
 class PlayerStatsTest(TestCase):
     def setUp(self):
         self.playerstats = PlayerStats(2544)
 
-    @patch('nba_api.stats.endpoints.playercareerstats', mock_get_playerstats)
     def test_getpstats(self):
-        mock_data = self.playerstats.get_data()
-
-        assert mock_data == sample_player_stats
+        with patch('nba_api.stats.endpoints.playercareerstats') as fakePlayerStatsCreator:
+            fakePlayerStatsCreator.return_value = FakePlayerStats(2544)
+            mock_data = self.playerstats.get_data()
+            assert mock_data == sample_player_stats
 
 
 # PLAYER NEXT GAMES TEST
-def mock_get_playergames(player_id):
-    return sample_player_stats
+class FakeNextGamesData:
+    def __init__(self, player_id):
+        self.player_id = player_id
+
+    def get_dict(self):
+        return sample_player_games
+
+
+class FakeNextGames:
+    def __init__(self, player_id):
+        self.career_totals_regular_season = FakeNextGamesData(player_id)
 
 
 class PlayerGamesTest(TestCase):
@@ -234,11 +263,12 @@ class PlayerGamesTest(TestCase):
             number_of_games="3", player_id=2544, season_all="2021-22", season_type_all_star="Regular Season"
         )
 
-    @patch('nba_api.stats.endpoints.PlayerNextNGames', mock_get_playergames)
     def test_nextgames(self):
-        mock_data = self.playergames.get_data()
+        with patch('nba_api.stats.endpoints.PlayerNextNGames') as fakeGames:
+            fakeGames.return_value = FakeNextGames(2544)
+            mock_data = self.playergames.get_data()
 
-        assert mock_data == sample_player_games
+            assert mock_data == sample_player_games
 
 
 # TEAM ID TEST
