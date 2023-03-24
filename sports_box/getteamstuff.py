@@ -1,5 +1,4 @@
 # team stuff
-import time
 
 # import userprofile
 from nba_api.stats.static import teams
