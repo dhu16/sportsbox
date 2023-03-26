@@ -11,7 +11,7 @@ name = "sports-box"
 authors = [{name = "Daniel Hu", email = "danielhu2000@gmail.com"}]
 description="Sportsbox"
 readme = "README.md"
-version = "0.0.1"
+version = "0.1.1"
 requires-python = ">=3.7"
 
 dependencies = [
