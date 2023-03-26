@@ -1,5 +1,4 @@
 <h1> sportsbox </h1>
-
 <p>Discord bot displaying sports news and convenient stats. </p>
 
 ![](https://img.shields.io/badge/license-Apache--2.0-brightgreen)
