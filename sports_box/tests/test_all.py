@@ -201,7 +201,7 @@ class TestNBAArticle(TestCase):
 class TestNFLArticle(TestCase):
     def test_getnbanews(self):
         with patch('sports_box.getnews.requests.get') as mock_data:
-            fakedata = lambda : {
+            fakedata = lambda: {
                 "articles": [sample_nba_news, sample_nba_news2, sample_nba_news3, sample_nba_news4, sample_nba_news5]
             }
             mock_data.return_value = Mock(status_code=201, json=fakedata)
