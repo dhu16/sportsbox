@@ -1,5 +1,5 @@
 # functions to display various data
-from getplayerstuff import playerNextNGames
+from .getplayerstuff import playerNextNGames
 
 import matplotlib.pyplot as plt
 
