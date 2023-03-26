@@ -2,6 +2,7 @@
 
 <p>Discord bot displaying sports news and convenient stats. </p>
 
+
 ![](https://img.shields.io/badge/license-Apache--2.0-brightgreen)
 ![](https://img.shields.io/github/issues/dhu16/sportsbox)
 [![Build Status](https://github.com/dhu16/sportsbox/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/dhu16/sportsbox/actions?query=workflow%3A%22Build+Status%22)
