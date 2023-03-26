@@ -1,7 +1,8 @@
 # tests
-from sports_box import PlayerInfo, PlayerStats, PlayerGames, PlayerId, TeamId, getTName, getTColor1
+from sports_box import PlayerInfo, PlayerStats, PlayerId, TeamId, getTName, getTColor1, getNBANews, getNFLNews
 from unittest.mock import patch
 from unittest import TestCase
+from unittest.mock import Mock
 
 # from typing import List
 # import pytest
@@ -175,6 +176,39 @@ sample_team_id = {
     'year_founded': 1968,
 }
 
+sample_nba_news = {"headline": "headline", "description": "description", "links": {"web": {"href": "link"}}}
+sample_nba_news2 = {"headline": "h", "description": "description", "links": {"web": {"href": "link"}}}
+sample_nba_news3 = {"headline": "e", "description": "description", "links": {"web": {"href": "link"}}}
+sample_nba_news4 = {"headline": "a", "description": "description", "links": {"web": {"href": "link"}}}
+sample_nba_news5 = {"headline": "d", "description": "description", "links": {"web": {"href": "link"}}}
+
+
+# NBA NEWS TEST
+class TestNBAArticle(TestCase):
+    def test_getnbanews(self):
+        with patch('sports_box.getnews.requests.get') as mock_data:
+            # a = FakeNBAArticle('headline', 'description', 'link')
+            fakedata = lambda: {
+                "articles": [sample_nba_news, sample_nba_news2, sample_nba_news3, sample_nba_news4, sample_nba_news5]
+            }
+            mock_data.return_value = Mock(status_code=201, json=fakedata)
+            # mock_data.assert_called_with('http://site.api.espn.com/apis/site/v2/sports/basketball/nba/news')
+            data = getNBANews()
+            assert len(data) == 5
+
+
+# NFL NEWS TEST
+class TestNFLArticle(TestCase):
+    def test_getnbanews(self):
+        with patch('sports_box.getnews.requests.get') as mock_data:
+            fakedata = lambda : {
+                "articles": [sample_nba_news, sample_nba_news2, sample_nba_news3, sample_nba_news4, sample_nba_news5]
+            }
+            mock_data.return_value = Mock(status_code=201, json=fakedata)
+            # mock_data.assert_called_with('http://site.api.espn.com/apis/site/v2/sports/basketball/nba/news')
+            data = getNFLNews()
+            assert len(data) == 5
+
 
 # PLAYER ID TEST
 def mock_get_playerid(player_id):
@@ -305,6 +339,7 @@ class TeamIdTest(TestCase):
 # assert t.final_standing == 3
 
 
+# TEAM COLOR TEST
 def test_team1():
     t = getTName(0)
     # print(t)

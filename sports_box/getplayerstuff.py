@@ -1,5 +1,4 @@
 # favorite player data
-import matplotlib.pyplot as plt
 
 # import userprofile
 from nba_api.stats.static import players
@@ -83,43 +82,28 @@ def getPlayer(player):
 def playerStats(player):  # show career stats of player
     id = getPID(player)
     load = playercareerstats.PlayerCareerStats(id).career_totals_regular_season
-    # stats = load.career_totals_regular_season.get_data_frame()
-    stats = load.get_dict()
+    stats = load.get_data_frame()
+    # stats = load.get_dict()
     # stats.style.set_caption(player + "'s Stats")
 
+    # print(stats)
     return stats  # horizontal stats
 
 
-def playerNextNGames(player, n):  # show next n games for player
+def playerNextNGames(player, n):  # return next n games as data frame
     s = str(n)
     id = getPID(player)
     load = PlayerNextNGames(
         number_of_games=s, player_id=id, season_all="2022-23", season_type_all_star="Regular Season"
     )
-    # upcoming = load.next_n_games.get_data_frame()
-    upcoming = load.next_n_games.get_dict()
+    upcoming = load.next_n_games.get_data_frame()
+    # upcoming = load.next_n_games.get_dict()
     # upcoming.style.set_caption(player + "'s Upcoming " + s + " Games")
 
     return upcoming
     # print(upcoming)
 
 
-def buildPlayerSchedule(player):
-    df = playerNextNGames(player, 3)
-    df_new = df[['GAME_DATE', 'HOME_TEAM_NICKNAME', 'VISITOR_TEAM_NICKNAME', 'GAME_TIME']]
-
-    fig = plt.figure(figsize=(7, 3.5))
-    ax = fig.add_subplot(111)
-    ax.table(cellText=df_new.values, colLabels=df_new.columns, loc='center')
-
-    s = player + "'s Upcoming 3 Games"
-    ax.set_title(s, fontdict={'fontweight': 'bold'}, loc='center')
-    ax.axis('off')
-
-    plt.show()
-
-
 # getPlayer("Lebron James")
-# playerStats("Lebron James")
+playerStats("Lebron James")
 # playerNextNGames("Lebron James", 3)
-# buildPlayerSchedule("Lebron James")
