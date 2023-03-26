@@ -105,5 +105,5 @@ def playerNextNGames(player, n):  # return next n games as data frame
 
 
 # getPlayer("Lebron James")
-playerStats("Lebron James")
+# playerStats("Lebron James")
 # playerNextNGames("Lebron James", 3)
