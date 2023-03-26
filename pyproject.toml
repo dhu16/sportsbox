@@ -7,7 +7,7 @@ requires = [
 build-backend="setuptools.build_meta"
 
 [project]
-name = "example-project-python"
+name = "sports-box"
 authors = [{name = "Daniel Hu", email = "danielhu2000@gmail.com"}]
 description="Sportsbox"
 readme = "README.md"
@@ -17,7 +17,9 @@ requires-python = ">=3.7"
 dependencies = [
     "matplotlib",
     "nba_api",
-    "espn_api"
+    "espn_api",
+    "requests",
+    "discord"
 ]
 
 classifiers = [

@@ -13,3 +13,5 @@ from .getplayerstuff import (
 )
 from .getteamstuff import getTeam, TeamId
 from .teamcolors import getTName, getTColor1
+from .getnews import getNBANews, getNFLNews
+from .gettodayscores import getScores
