@@ -70,8 +70,8 @@ def getPlayer(player):
     id = getPID(player)
     load = commonplayerinfo.CommonPlayerInfo(id).common_player_info
     # load = commonplayerinfo.CommonPlayerInfo(id)
-    # playerinfo = load.common_player_info.get_data_frame()
-    playerinfo = load.get_dict()
+    playerinfo = load.common_player_info.get_data_frame()
+    # playerinfo = load.get_dict()
     # playerinfo = load
 
     # display(playerinfo.loc[0])
