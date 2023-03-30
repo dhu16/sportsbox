@@ -72,7 +72,7 @@ link | link to ESPN article |
 
 </br>
 
-## Invite as Discord bot 
+## Invite as Discord bot (NOTE: currently not hosted on server yet!)
 
 Invite [sportsbox](https://discord.com/api/oauth2/authorize?client_id=1089389802840920195&permissions=2147576832&scope=bot) to your Discord server!
 
@@ -90,4 +90,8 @@ Invite [sportsbox](https://discord.com/api/oauth2/authorize?client_id=1089389802
 
 Read [CONTRIBUTING.md](CONTRIBUTING.md) file
 
+</br>
 
+## Upcoming Features
+
+- Bot command to post a random trending sports highlight
