@@ -22,10 +22,10 @@ def getNBANews():  # get 5 random recent articles
     """Gets 5 random recent articles.
 
     Args:
-    
+
     Returns:
         Set: 5 unique NBA articles
-    
+
     """
     url = 'http://site.api.espn.com/apis/site/v2/sports/basketball/nba/news'
     data = requests.get(url)
@@ -59,10 +59,10 @@ def getNFLNews():  # get 5 random recent articles
     """Gets 5 random recent articles.
 
     Args:
-    
+
     Returns:
         Set: 5 unique NFL articles
-    
+
     """
     url = 'http://site.api.espn.com/apis/site/v2/sports/football/nfl/news'
     data = requests.get(url)

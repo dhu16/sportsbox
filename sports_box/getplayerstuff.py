@@ -56,15 +56,16 @@ class PlayerGames(object):
 
 #############################################################################
 
+
 def getPID(player):  # helper function to get player ID
     """Gets player ID.
 
     Args:
         arg1 (str): case-sensitive first and last name of player
-    
+
     Returns:
         int: player ID
-    
+
     """
 
     p = players.find_players_by_full_name(player)
@@ -79,10 +80,10 @@ def getPlayer(player):
 
     Args:
         arg1 (str): case-sensitive first and last name of player
-    
+
     Returns:
         DataFrame: basic player info
-    
+
     """
     # getHeadshotById(id)
     id = getPID(player)
@@ -102,10 +103,10 @@ def playerStats(player):  # show career stats of player
 
     Args:
         arg1 (str): case-sensitive first and last name of player
-    
+
     Returns:
         DataFrame: player regular season stats
-    
+
     """
     id = getPID(player)
     load = playercareerstats.PlayerCareerStats(id).career_totals_regular_season
@@ -123,10 +124,10 @@ def playerNextNGames(player, n):  # return next n games as data frame
     Args:
         arg1 (str): case-sensitive first and last name of player
         arg2 (int): number of upcoming games to be shown
-    
+
     Returns:
         DataFrame: next N games info
-    
+
     """
     s = str(n)
     id = getPID(player)

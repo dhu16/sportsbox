@@ -26,10 +26,10 @@ def getTeam(team):
 
     Args:
         arg1 (str): non case-sensitive team abbreviation
-    
+
     Returns:
         DataFrame: basic team info
-    
+
     """
     t = teams.find_team_by_abbreviation(team)
     # get team logo
