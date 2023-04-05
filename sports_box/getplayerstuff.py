@@ -56,8 +56,17 @@ class PlayerGames(object):
 
 #############################################################################
 
-
 def getPID(player):  # helper function to get player ID
+    """Gets player ID.
+
+    Args:
+        arg1 (str): case-sensitive first and last name of player
+    
+    Returns:
+        int: player ID
+    
+    """
+
     p = players.find_players_by_full_name(player)
     d = p[0]
     id = list(d.items())[0][1]
@@ -66,6 +75,15 @@ def getPID(player):  # helper function to get player ID
 
 
 def getPlayer(player):
+    """Gets common player info.
+
+    Args:
+        arg1 (str): case-sensitive first and last name of player
+    
+    Returns:
+        DataFrame: basic player info
+    
+    """
     # getHeadshotById(id)
     id = getPID(player)
     load = commonplayerinfo.CommonPlayerInfo(id).common_player_info
@@ -80,6 +98,15 @@ def getPlayer(player):
 
 
 def playerStats(player):  # show career stats of player
+    """Gets player stats.
+
+    Args:
+        arg1 (str): case-sensitive first and last name of player
+    
+    Returns:
+        DataFrame: player regular season stats
+    
+    """
     id = getPID(player)
     load = playercareerstats.PlayerCareerStats(id).career_totals_regular_season
     stats = load.get_data_frame()
@@ -91,6 +118,16 @@ def playerStats(player):  # show career stats of player
 
 
 def playerNextNGames(player, n):  # return next n games as data frame
+    """Gets next N games for player.
+
+    Args:
+        arg1 (str): case-sensitive first and last name of player
+        arg2 (int): number of upcoming games to be shown
+    
+    Returns:
+        DataFrame: next N games info
+    
+    """
     s = str(n)
     id = getPID(player)
     load = PlayerNextNGames(
