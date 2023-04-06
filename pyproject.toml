@@ -54,6 +54,9 @@ develop = [
     "pytest-cov>=2.6.1",
     "twine",
     "wheel",
+    "sphinx",
+    "sphinx_rtd_theme",
+    "myst-parser",
 ]
 
 [tool.black]
