@@ -2,7 +2,7 @@
 # BUILD #
 #########
 develop:  ## install dependencies and build library
-	python -m pip install -e .[develop]
+	python3 -m pip install -e .[develop]
 
 build:  ## build the python library
 	python3 setup.py build build_ext --inplace
@@ -76,6 +76,16 @@ dist: clean build dist-build dist-check  ## Build dists
 publish:  # Upload python assets
 	echo "would usually run python -m twine upload dist/* --skip-existing"
 
+########
+# DOCS #
+########
+
+docs:  ## build the documentation
+	make -C docs html
+
+show-docs: docs  ## show the documentation
+	open docs/_build/html/index.html
+
 #########
 # CLEAN #
 #########
@@ -95,26 +105,4 @@ help:
 print-%:
 	@echo '$*=$($*)'
 
-.PHONY: develop build install lint lints format fix check checks annotate test coverage show-coverage tests show-version patch minor major dist-build dist-check dist publish deep-clean clean help
-
-
-# Minimal makefile for Sphinx documentation
-#
-
-# You can set these variables from the command line, and also
-# from the environment for the first two.
-SPHINXOPTS    ?=
-SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = .
-BUILDDIR      = _build
-
-# Put it first so that "make" without argument is like "make help".
-help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-
-.PHONY: help Makefile
-
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+.PHONY: develop build docs install lint lints format fix check checks annotate test coverage show-coverage tests show-version patch minor major dist-build dist-check dist publish deep-clean clean help
