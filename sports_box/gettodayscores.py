@@ -28,6 +28,15 @@ if data.ok:
 
 
 def getScores():
+    """Gets today's NBA box scores and stores in Game object
+
+    Args:
+        
+
+    Returns:
+        
+
+    """
     games = list()
     games.clear()
 
