@@ -18,7 +18,7 @@
 
 ## Installation
 
-`pip install sportsbox`
+`pip install sports-box`
 
 <h3> Usage </h3>
 
