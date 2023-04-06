@@ -22,7 +22,7 @@ master_doc="index"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['myst_parser', 'sphinx.ext.napoleon', 'sphinx.ext.autodoc']
+extensions = ['myst-parser', 'sphinx.ext.napoleon', 'sphinx.ext.autodoc']
 source_suffix = ['.rst', '.md']
 
 templates_path = ['_templates']
