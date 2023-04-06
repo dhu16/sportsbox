@@ -8,7 +8,7 @@
 [![Build Status](https://github.com/dhu16/sportsbox/workflows/Build%20Status/badge.svg?branch=main)](https://github.com/dhu16/sportsbox/actions?query=workflow%3A%22Build+Status%22)
 [![codecov](https://codecov.io/gh/dhu16/sportsbox/branch/main/graph/badge.svg?token=UHT46NYQGX)](https://codecov.io/gh/dhu16/sportsbox)
 [![PyPI](https://img.shields.io/pypi/v/sports-box)](https://pypi.org/project/sports-box/)
-[![Documentation Status](https://readthedocs.org/projects/sportsbox/badge/?version=latest)](https://sportsbox.readthedocs.io/en/latest/?badge=latest)
+[![docs](https://img.shields.io/github/actions/workflow/status/dhu16/sportsbox/docs.yml?label=docs)](https://dhu16.github.io/sportsbox/)
 
 <h2> Overview </h2>
 
