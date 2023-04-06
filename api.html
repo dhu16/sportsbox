@@ -62,6 +62,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#sports_box.getplayerstuff.getPlayer"><code class="docutils literal notranslate"><span class="pre">getPlayer()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sports_box.getplayerstuff.playerNextNGames"><code class="docutils literal notranslate"><span class="pre">playerNextNGames()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sports_box.getplayerstuff.playerStats"><code class="docutils literal notranslate"><span class="pre">playerStats()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sports_box.getteamstuff.TeamId"><code class="docutils literal notranslate"><span class="pre">TeamId</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sports_box.getteamstuff.TeamId.get_data"><code class="docutils literal notranslate"><span class="pre">TeamId.get_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#sports_box.getteamstuff.getTeam"><code class="docutils literal notranslate"><span class="pre">getTeam()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sports_box.getnews.Article"><code class="docutils literal notranslate"><span class="pre">Article</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sports_box.getnews.getNBANews"><code class="docutils literal notranslate"><span class="pre">getNBANews()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sports_box.getnews.getNFLNews"><code class="docutils literal notranslate"><span class="pre">getNFLNews()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sports_box.gettodayscores.Game"><code class="docutils literal notranslate"><span class="pre">Game</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sports_box.gettodayscores.getScores"><code class="docutils literal notranslate"><span class="pre">getScores()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -201,6 +211,81 @@
 <dd class="field-odd"><p>DataFrame</p>
 </dd>
 </dl>
+</dd></dl>
+
+<span class="target" id="module-sports_box.getteamstuff"></span><dl class="py class">
+<dt class="sig sig-object py" id="sports_box.getteamstuff.TeamId">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sports_box.getteamstuff.</span></span><span class="sig-name descname"><span class="pre">TeamId</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sports_box.getteamstuff.TeamId" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="sports_box.getteamstuff.TeamId.get_data">
+<span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sports_box.getteamstuff.TeamId.get_data" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sports_box.getteamstuff.getTeam">
+<span class="sig-prename descclassname"><span class="pre">sports_box.getteamstuff.</span></span><span class="sig-name descname"><span class="pre">getTeam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">team</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sports_box.getteamstuff.getTeam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets common team info.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>arg1</strong> (<em>str</em>) – non case-sensitive team abbreviation</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>basic team info</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-sports_box.getnews"></span><dl class="py class">
+<dt class="sig sig-object py" id="sports_box.getnews.Article">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sports_box.getnews.</span></span><span class="sig-name descname"><span class="pre">Article</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">headline</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sports_box.getnews.Article" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sports_box.getnews.getNBANews">
+<span class="sig-prename descclassname"><span class="pre">sports_box.getnews.</span></span><span class="sig-name descname"><span class="pre">getNBANews</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sports_box.getnews.getNBANews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets 5 random recent articles.</p>
+<p>Args:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>5 unique NBA articles</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sports_box.getnews.getNFLNews">
+<span class="sig-prename descclassname"><span class="pre">sports_box.getnews.</span></span><span class="sig-name descname"><span class="pre">getNFLNews</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sports_box.getnews.getNFLNews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets 5 random recent articles.</p>
+<p>Args:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>5 unique NFL articles</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-sports_box.gettodayscores"></span><dl class="py class">
+<dt class="sig sig-object py" id="sports_box.gettodayscores.Game">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sports_box.gettodayscores.</span></span><span class="sig-name descname"><span class="pre">Game</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gameStatus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gameStatusText</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">homeTeam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hWins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hLosses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hScore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">awayTeam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aWins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aLosses</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aScore</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sports_box.gettodayscores.Game" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="sports_box.gettodayscores.getScores">
+<span class="sig-prename descclassname"><span class="pre">sports_box.gettodayscores.</span></span><span class="sig-name descname"><span class="pre">getScores</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sports_box.gettodayscores.getScores" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets today’s NBA box scores and stores in Game object</p>
+<p>Args:</p>
+<p>Returns:</p>
 </dd></dl>
 
 </section>
