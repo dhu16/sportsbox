@@ -23,6 +23,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 @bot.command(name='nbanews')
 async def nbanews(ctx):
+    """!nbanews - Posts NBA news articles to Discord"""
     articles = getNBANews()
 
     embed = discord.Embed(title="NBA Recent News")
@@ -36,6 +37,7 @@ async def nbanews(ctx):
 
 @bot.command(name='nflnews')
 async def nflnews(ctx):
+    """!nflnews - Posts NFL news articles to Discord"""
     articles = getNFLNews()
 
     embed = discord.Embed(title="NFL Recent News")
@@ -49,6 +51,7 @@ async def nflnews(ctx):
 
 @bot.command(name='nbascores')
 async def nbascores(ctx):
+    """!nbascores - Posts today's NBA box scores"""
     games = getScores()
 
     embed = discord.Embed(title="NBA Box Scores")

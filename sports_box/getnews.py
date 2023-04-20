@@ -6,6 +6,18 @@ import random
 
 
 class Article:
+    """Article class.
+
+    EX: article = Article("Headline", "Description", "Link")
+
+    Args:
+        headline (str): headline of the ESPN article
+        description (str): description of the ESPN article
+        link (str): link to ESPN article
+
+
+    """
+
     def __init__(self, headline, description, link):
         self.headline = headline
         self.description = description
@@ -21,7 +33,7 @@ class Article:
 def getNBANews():  # get 5 random recent articles
     """Gets 5 random recent articles.
 
-    Args:
+    EX: nbanews = getNBANews()
 
     Returns:
         Set: 5 unique NBA articles
@@ -58,7 +70,7 @@ def getNBANews():  # get 5 random recent articles
 def getNFLNews():  # get 5 random recent articles
     """Gets 5 random recent articles.
 
-    Args:
+    EX: nflnews = getNFLNews()
 
     Returns:
         Set: 5 unique NFL articles
