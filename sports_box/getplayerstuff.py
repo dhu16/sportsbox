@@ -16,6 +16,8 @@ class PlayerId(object):
         self.player_id = player_id
 
     def get_data(self):
+        """For testing purposes.
+        """
         data = players.find_players_by_full_name("Lebron James")
         return data
 
@@ -25,6 +27,8 @@ class PlayerInfo(object):
         self.player_id = player_id
 
     def get_data(self):
+        """For testing purposes.
+        """
         data = commonplayerinfo.CommonPlayerInfo(2544).common_player_info
         return data
 
@@ -34,6 +38,8 @@ class PlayerStats(object):
         self.player_id = player_id
 
     def get_data(self):
+        """For testing purposes.
+        """
         data = playercareerstats.PlayerCareerStats(2544).career_totals_regular_season.get_dict()
         # data = playerStats("Lebron James")
         return data
@@ -47,6 +53,8 @@ class PlayerGames(object):
         self.season_type_all_star = season_type_all_star
 
     def get_data(self):
+        """For testing purposes.
+        """
         data = PlayerNextNGames(
             number_of_games="3", player_id=2544, season_all="2021-22", season_type_all_star="Regular Season"
         ).next_n_games.get_dict()

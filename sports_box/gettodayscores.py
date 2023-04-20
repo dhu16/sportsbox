@@ -5,6 +5,24 @@ import requests
 
 
 class Game:
+    """Game class.
+
+    Class containing elements relating to a box score.
+
+    Args:
+        gameStatus (int): `1` not started, `2` in progress, `3` finished 
+        gameStatusText (str): `start time (ET)`, `Qx and time remaining`, `FINAL`
+        homeTeam (str): EX: `LAL`
+        hWins (int): home team wins
+        hLosses (int): home team losses
+        hScore (int): home team's current score
+        awayTeam (str): EX: `LAC`
+        aWins (int): away team wins 
+        aLosses (int): away team losses
+        aScore (int): away team's current score
+    
+    
+    """
     def __init__(self, gameStatus, gameStatusText, homeTeam, hWins, hLosses, hScore, awayTeam, aWins, aLosses, aScore):
         self.gameStatus = gameStatus
         self.gameStatusText = gameStatusText
@@ -34,6 +52,7 @@ def getScores():
 
 
     Returns:
+        Game: Game object
 
 
     """
