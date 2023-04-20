@@ -3,12 +3,10 @@
 
 ```{eval-rst}
 .. automodule:: sports_box.getplayerstuff
-   :members:
-   :undoc-members:
+   :members: getPID, getPlayer, playerStats, playerNextNGames
 
 .. automodule:: sports_box.getteamstuff
-   :members:
-   :undoc-members:
+   :members: getTeam
 
 .. automodule:: sports_box.getnews
    :members:
@@ -17,4 +15,5 @@
 .. automodule:: sports_box.gettodayscores
    :members:
    :undoc-members:
+
 ```

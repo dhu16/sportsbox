@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getting Started &mdash; sports-box 0.1.1 documentation</title>
+  <title>Getting Started/Examples &mdash; sports-box 0.1.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -41,7 +41,10 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started/Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 </ul>
 
@@ -59,7 +62,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Getting Started</li>
+      <li class="breadcrumb-item active">Getting Started/Examples</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/gettingstarted.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -69,8 +72,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">¶</a></h1>
+  <section id="getting-started-examples">
+<h1>Getting Started/Examples<a class="headerlink" href="#getting-started-examples" title="Permalink to this heading">¶</a></h1>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">sports-box</span></code></p>
+<h3> General Usage </h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="kn">from</span> <span class="nn">sportsbox</span> <span class="kn">import</span> <span class="n">showUpcomingGames</span><span class="p">,</span> <span class="n">getPlayer</span><span class="p">,</span> <span class="n">playerStats</span><span class="p">,</span> <span class="n">playerNextNGames</span><span class="p">,</span> <span class="n">getTeam</span><span class="p">,</span> <span class="n">getScores</span><span class="p">,</span> <span class="n">getNBANews</span><span class="p">,</span> <span class="n">getNFLNews</span>
+
+<span class="c1">#Get basic player information and career regular season stats returned as dataframes</span>
+<span class="n">player_info_df</span> <span class="o">=</span> <span class="n">getPlayer</span><span class="p">(</span><span class="s2">&quot;Lebron James&quot;</span><span class="p">)</span>
+<span class="n">player_stats_df</span> <span class="o">=</span> <span class="n">playerStats</span><span class="p">(</span><span class="s2">&quot;Lebron James&quot;</span><span class="p">)</span>
+
+<span class="c1">#Show upcoming next N games for a player as a matplotlib plot</span>
+<span class="n">showUpcomingGames</span><span class="p">(</span><span class="s2">&quot;Lebron James&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1">#Get upcoming next N games with more details for a player returned as a dataframe</span>
+<span class="n">player_games_df</span> <span class="o">=</span> <span class="n">playerNextNGames</span><span class="p">(</span><span class="s2">&quot;Lebron James&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">)</span>
+
+<span class="c1">#Get basic team information returned as dataframe</span>
+<span class="n">team_info_df</span> <span class="o">=</span> <span class="n">getTeam</span><span class="p">(</span><span class="s2">&quot;mil&quot;</span><span class="p">)</span>
+
+<span class="c1">#Get today&#39;s NBA box scores returned as a list of Game objects</span>
+<span class="n">today_scores</span> <span class="o">=</span> <span class="n">getScores</span><span class="p">()</span>
+
+</pre></div>
+</div>
+</br>
+<h3> Discord Bot Commands </h3>
+<p><code class="docutils literal notranslate"><span class="pre">!nbanews</span></code> - Shows 5 random recent NBA news articles</p>
+<p><code class="docutils literal notranslate"><span class="pre">!nflnews</span></code> - Shows 5 random recent NFL news articles</p>
+<p><code class="docutils literal notranslate"><span class="pre">!nbascores</span></code> - Shows today’s NBA box scores</p>
+</section>
 </section>
 
 
