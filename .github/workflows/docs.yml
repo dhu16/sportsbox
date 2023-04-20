@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - docsupdate
+      - docs
 
 permissions:
   contents: write
