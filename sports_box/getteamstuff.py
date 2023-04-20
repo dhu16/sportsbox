@@ -14,8 +14,7 @@ class TeamId(object):
         self.team_id = team_id
 
     def get_data(self):
-        """For testing purposes.
-        """
+        """For testing purposes."""
         data = teams.find_team_by_abbreviation("mil")
         return data
 

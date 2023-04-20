@@ -15,8 +15,9 @@ class Article:
         description (str): description of the ESPN article
         link (str): link to ESPN article
 
-    
+
     """
+
     def __init__(self, headline, description, link):
         self.headline = headline
         self.description = description
