@@ -57,7 +57,6 @@ develop = [
     "sphinx",
     "sphinx_rtd_theme",
     "myst-parser",
-    "myst_parser"
 ]
 
 [tool.black]
