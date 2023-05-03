@@ -98,7 +98,7 @@ async def nflvids(ctx):  # pragma: no cover
 async def dogger(ctx):  # pragma: no cover
     embed = discord.Embed(title="Dogger of the Month")
 
-    file = discord.File("dogger/dogger.png", filename="image.png")
+    file = discord.File("sports_box/dogger/dogger.png", filename="image.png")
     embed.set_image(url="attachment://image.png")
     await ctx.send(file=file, embed=embed)
 
