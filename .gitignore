@@ -52,6 +52,7 @@ coverage.xml
 .pytest_cache/
 
 .DS_Store
+dogger/
 
 # Translations
 *.mo
