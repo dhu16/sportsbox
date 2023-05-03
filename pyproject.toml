@@ -19,7 +19,8 @@ dependencies = [
     "nba_api",
     "espn_api",
     "requests",
-    "discord"
+    "discord",
+    "tiktokapipy"
 ]
 
 classifiers = [
