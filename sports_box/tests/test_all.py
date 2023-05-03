@@ -1,8 +1,20 @@
 # tests
-from sports_box import PlayerInfo, PlayerStats, PlayerId, TeamId, getTName, getTColor1, getNBANews, getNFLNews
+from sports_box import (
+    PlayerInfo,
+    PlayerStats,
+    MockVideo,
+    PlayerId,
+    TeamId,
+    getTName,
+    getTColor1,
+    getNBANews,
+    getNFLNews,
+    getnbalinks,
+)
 from unittest.mock import patch
 from unittest import TestCase
 from unittest.mock import Mock
+import types
 
 # from typing import List
 # import pytest
@@ -263,7 +275,7 @@ class FakePlayerStatsData:
 
 class FakePlayerStats:
     def __init__(self, player_id):
-        self.career_totals_regular_season = FakeCommonPlayerInfoData(player_id)
+        self.career_totals_regular_season = FakePlayerStatsData(player_id)
 
 
 class PlayerStatsTest(TestCase):
@@ -275,6 +287,29 @@ class PlayerStatsTest(TestCase):
             fakePlayerStatsCreator.return_value = FakePlayerStats(2544)
             mock_data = self.playerstats.get_data()
             assert type(mock_data) == type(sample_player_stats)
+
+
+# TIKTOKS TEST
+class FakeUserData:
+    def __init__(self, id, video_limit):
+        self.id = id
+        video_limit = 5
+
+
+class FakeUser:
+    def __init__(self, id, video_limit):
+        self.videos = MockVideo(123)
+
+
+class UserVideosTest(TestCase):
+    def setUp(self):
+        self.videos = MockVideo(123)
+
+    def test_nbatiktoks(self):
+        with patch("tiktokapipy.async_api.AsyncTikTokAPI.user") as fakeUserCreator:
+            fakeUserCreator.return_value = FakeUser(123, 5)
+            mock_data = getnbalinks()
+            assert type(mock_data) is types.CoroutineType
 
 
 """

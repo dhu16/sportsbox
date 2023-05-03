@@ -16,4 +16,7 @@
    :members:
    :undoc-members:
 
+.. automodule:: sports_box.gettiktokstuff
+   :members: getnbalinks, getnfllinks
+
 ```

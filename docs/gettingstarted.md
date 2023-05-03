@@ -38,3 +38,7 @@ today_scores = getScores()
 `!nflnews` - Shows 5 random recent NFL news articles
 
 `!nbascores` - Shows today's NBA box scores
+
+`!nbavids` - Shows 5 recent NBA Tiktoks
+
+`!nflvids` - Shows 5 recent NFL Tiktoks
