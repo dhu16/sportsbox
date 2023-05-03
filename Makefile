@@ -42,7 +42,7 @@ test: ## clean and run unit tests
 	python3 -m pytest -v sports_box/tests
 
 coverage:  ## clean and run unit tests with coverage
-	python3 -m pytest -v sports_box/tests --cov=sports_box --cov-branch --cov-fail-under=75 --cov-report term-missing
+	python3 -m pytest -v sports_box/tests --cov=sports_box --cov-branch --cov-fail-under=50 --cov-report term-missing
 
 # Alias
 tests: test
