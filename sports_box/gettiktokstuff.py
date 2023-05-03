@@ -1,4 +1,3 @@
-import json
 from tiktokapipy.async_api import AsyncTikTokAPI
 
 
