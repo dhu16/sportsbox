@@ -12,7 +12,7 @@
 
 <h2> Overview </h2>
 
-<p> This Discord bot allows users to view NBA and NFL news, scores, and stats on their servers with easy commands. I always found it annoying to constantly search up stats for a game I was monitoring while studying and I was too lazy to install official apps too. This alleviates the inconvenience of always having to manually search up stats or open one's phone while working or playing games with friends as Discord is usually always open on someone's computer.  </p>
+<p> This Discord bot allows users to view NBA and NFL news, scores, and stats on their servers with intuitive commands. The commands are named after the key words I always search with. I always found it annoying to constantly search up stats for a game I was monitoring while studying and I was too lazy to install official apps too. This alleviates the inconvenience of always having to manually search up stats or open one's phone while working or playing games with friends as Discord is usually always open on someone's computer.  </p>
 
 </br>
 
