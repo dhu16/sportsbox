@@ -99,4 +99,4 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) file
 
 ## Upcoming Features
 
-- Bot command to post a random trending sports highlight
+
