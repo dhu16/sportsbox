@@ -85,6 +85,10 @@ Invite [sportsbox](https://discord.com/api/oauth2/authorize?client_id=1089389802
 
 `!nbascores` - Shows today's NBA box scores
 
+`!nbavids` - Shows 5 recent NBA tiktok videos
+
+`!nflvids` - Shows 5 recent NFL tiktok videos
+
 </br>
 
 ## Development
