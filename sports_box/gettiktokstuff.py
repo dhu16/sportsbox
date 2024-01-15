@@ -1,5 +1,10 @@
-from tiktokapipy.async_api import AsyncTikTokAPI
+from TikTokApi import TikTokApi
+import asyncio
+import os
 
+ms_token = os.environ.get(
+    "ms_token", None
+)
 
 # MOCK CLASSES
 
@@ -23,12 +28,18 @@ async def getnbalinks():
     vids = {}
     url = "https://www.tiktok.com/@nba/video/"
 
-    async with AsyncTikTokAPI() as api:
-        user = await api.user("nba", video_limit=5)
-        async for video in user.videos:
-            # print(video.id)
+    async with TikTokApi()  as api:
+        await api.create_sessions(ms_tokens=[ms_token], num_sessions=1, sleep_after=3)
+        user = api.user("nba")
+
+        async for video in user.videos(count=5):
+            #print(video.id)
             id = str(video.id)
-            vids.update({url + id: video.desc})
+            #print(video.as_dict["desc"])
+            vids.update({url + id: video.as_dict["desc"]})
+
+            if len(vids) == 5:
+                break
 
     return vids
 
@@ -45,12 +56,18 @@ async def getnfllinks():
     vids = {}
     url = "https://www.tiktok.com/@nfl/video/"
 
-    async with AsyncTikTokAPI() as api:
-        user = await api.user("nfl", video_limit=5)
-        async for video in user.videos:
-            # print(video.id)
+    async with TikTokApi()  as api:
+        await api.create_sessions(ms_tokens=[ms_token], num_sessions=1, sleep_after=3)
+        user = api.user("nfl")
+
+        async for video in user.videos(count=5):
+            #print(video.id)
             id = str(video.id)
-            vids.update({url + id: video.desc})
+            #print(video.as_dict["desc"])
+            vids.update({url + id: video.as_dict["desc"]})
+
+            if len(vids) == 5:
+                break
 
     return vids
 
